@@ -1,0 +1,18 @@
+{
+  "name": "WF4 - Sales Agent Reply Check",
+  "nodes": [
+    {"id":"1770eebe-6187-43eb-ad40-48ef949b03a4","name":"Check For Replies","type":"n8n-nodes-base.gmailTrigger","typeVersion":1.4,"position":[240,300],"parameters":{"pollTimes":{"item":[{"mode":"everyX","unit":"minutes","value":30}]},"simple":true,"filters":{"readStatus":"unread","q":"is:unread category:primary"}},"credentials":{"gmailOAuth2":{"id":"tokm3C0osXIjtsBz","name":"Gmail OAuth2 API"}}},
+    {"id":"cdcf2f8a-d879-464c-8206-3e634dc31e97","name":"Extract Sender Email","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[350,300],"parameters":{"mode":"manual","includeOtherFields":true,"assignments":{"assignments":[{"id":"sender-email","name":"senderEmail","type":"string","value":"={{ $json.from.match(/<(.+)>/) ? $json.from.match(/<(.+)>/)[1] : $json.from }}"}]}}},
+    {"id":"8855a39b-0daa-44e5-b693-6fba41dd4837","name":"Find Matching Lead","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[460,300],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"filterByFormula":"={{ '{Email} = \\'' + $json.senderEmail + '\\'' }}","returnAll":false,"limit":1},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"7dff2ff7-68f1-46f6-b17c-6152280590e2","name":"Classify Reply","type":"@n8n/n8n-nodes-langchain.agent","typeVersion":3.1,"position":[680,300],"parameters":{"promptType":"define","text":"=תוכן המייל שהתקבל: {{ $(\"Check For Replies\").item.json.snippet }}","options":{"systemMessage":"את/ה מסווג/ת תשובות מייל של לידים בעסק אלקטרוניקה. קרא/י את תוכן המייל וסווג/י אותו לאחת משלוש קטגוריות בלבד, והשב/י במילה אחת בדיוק, באנגלית, ללא ניקוד, ללא מירכאות וללא טקסט נוסף: interested (אם הליד מביע עניין וממשיך את השיחה), not_interested (אם הליד מבקש להסיר אותו או לא מעוניין), replied (בכל מקרה אחר שהתקבלה תשובה כלשהי שאינה ברורה)."}}},
+    {"id":"c51aaa8c-b946-490c-b21f-d1c48988420e","name":"OpenAI Model","type":"@n8n/n8n-nodes-langchain.lmChatOpenAi","typeVersion":1.3,"position":[680,480],"parameters":{"model":{"__rl":true,"mode":"list","value":"gpt-5-mini","cachedResultName":"gpt-5-mini"}},"credentials":{"openAiApi":{"id":"NYa2yLeKkagRKcx1","name":"OpenAI account"}}},
+    {"id":"89877452-7ea9-4173-8482-b53c134f3b20","name":"Update Lead Status","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[900,300],"parameters":{"resource":"record","operation":"update","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"columns":{"mappingMode":"defineBelow","matchingColumns":["id"],"value":{"id":"={{ $(\"Find Matching Lead\").item.json.id }}","Status":"={{ $json.output.trim() }}"},"schema":[]}},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}}
+  ],
+  "connections": {
+    "Check For Replies": {"main": [[{"node":"Extract Sender Email","type":"main","index":0}]]},
+    "Extract Sender Email": {"main": [[{"node":"Find Matching Lead","type":"main","index":0}]]},
+    "Find Matching Lead": {"main": [[{"node":"Classify Reply","type":"main","index":0}]]},
+    "Classify Reply": {"main": [[{"node":"Update Lead Status","type":"main","index":0}]]},
+    "OpenAI Model": {"ai_languageModel": [[{"node":"Classify Reply","type":"ai_languageModel","index":0}]]}
+  }
+}

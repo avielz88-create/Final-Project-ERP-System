@@ -1,0 +1,18 @@
+{
+  "name": "WF3 - Sales Agent Cold Email",
+  "nodes": [
+    {"id":"619d1e82-57b3-4102-8c78-79591c2a555e","name":"Every 3 Hours","type":"n8n-nodes-base.scheduleTrigger","typeVersion":1.4,"position":[240,300],"parameters":{"rule":{"interval":[{"field":"hours","hoursInterval":3}]}}},
+    {"id":"9c2dc03f-ffa2-4548-8039-a06cd6324916","name":"Fetch One New Lead","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[460,300],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"filterByFormula":"{Status} = 'new'","returnAll":false,"limit":1},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"feec3568-47d2-4d35-bee6-e38a5036669d","name":"Draft Cold Email","type":"@n8n/n8n-nodes-langchain.agent","typeVersion":3.1,"position":[680,300],"parameters":{"promptType":"define","text":"=כתוב/כתבי מייל היכרות קצר ללקוח פוטנציאלי בשם {{ $json.fields.Name }} מחברת {{ $json.fields.Company }}.","options":{"systemMessage":"את/ה כותב/ת מיילים קרים (cold outreach) עבור עסק אלקטרוניקה ישראלי. כתוב/כתבי בעברית בלבד, מייל קצר (עד 5 משפטים), מקצועי וידידותי, המציג את העסק ומזמין לשיחה או לביקור בחנות. אל תשתמש/י בסלוגנים גנריים מוגזמים. סיים/י בברכה חמה ובחתימה \"צוות העסק\"."}}},
+    {"id":"3a703544-25f9-409a-9d50-272d01377fc8","name":"OpenAI Model","type":"@n8n/n8n-nodes-langchain.lmChatOpenAi","typeVersion":1.3,"position":[680,480],"parameters":{"model":{"__rl":true,"mode":"list","value":"gpt-5-mini","cachedResultName":"gpt-5-mini"}},"credentials":{"openAiApi":{"id":"NYa2yLeKkagRKcx1","name":"OpenAI account"}}},
+    {"id":"986535f8-0738-40ce-b776-90ab2fafb54a","name":"Send Cold Email","type":"n8n-nodes-base.gmail","typeVersion":2.2,"position":[900,300],"parameters":{"resource":"message","operation":"send","sendTo":"={{ $(\"Fetch One New Lead\").item.json.fields.Email }}","subject":"=היי {{ $(\"Fetch One New Lead\").item.json.fields.Name }}, בואו נכיר","emailType":"text","message":"={{ $json.output }}","options":{"appendAttribution":false}},"credentials":{"gmailOAuth2":{"id":"tokm3C0osXIjtsBz","name":"Gmail OAuth2 API"}}},
+    {"id":"4cd0406d-b1ca-40dc-9050-9b4021613bfa","name":"Mark Lead Contacted","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[1120,300],"parameters":{"resource":"record","operation":"update","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"columns":{"mappingMode":"defineBelow","matchingColumns":["id"],"value":{"id":"={{ $(\"Fetch One New Lead\").item.json.id }}","Status":"contacted"},"schema":[]}},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}}
+  ],
+  "connections": {
+    "Every 3 Hours": {"main": [[{"node":"Fetch One New Lead","type":"main","index":0}]]},
+    "Fetch One New Lead": {"main": [[{"node":"Draft Cold Email","type":"main","index":0}]]},
+    "Draft Cold Email": {"main": [[{"node":"Send Cold Email","type":"main","index":0}]]},
+    "OpenAI Model": {"ai_languageModel": [[{"node":"Draft Cold Email","type":"ai_languageModel","index":0}]]},
+    "Send Cold Email": {"main": [[{"node":"Mark Lead Contacted","type":"main","index":0}]]}
+  }
+}

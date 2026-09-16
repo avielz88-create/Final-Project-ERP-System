@@ -1,0 +1,16 @@
+{
+  "name": "WF8 - Invoice Document & Drive Upload",
+  "nodes": [
+    {"id":"094e0356-703a-440c-8ff5-ac60fbcaf376","name":"Every Minute","type":"n8n-nodes-base.scheduleTrigger","typeVersion":1.4,"position":[240,300],"parameters":{"rule":{"interval":[{"field":"minutes","minutesInterval":1}]}}},
+    {"id":"9f2bed44-86df-4c5c-b548-01ccaa69506e","name":"Fetch Ready Invoices","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[460,300],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tbl58gkebHkGzwEOv"},"filterByFormula":"{Status} = 'ready-to-produce'","returnAll":true},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"e470905e-1d80-44e4-a825-db59705a6d3f","name":"Build Invoice HTML","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[680,300],"parameters":{"mode":"manual","includeOtherFields":true,"assignments":{"assignments":[{"id":"invoice-html","name":"html","type":"string","value":"=<!DOCTYPE html><html dir=\"rtl\" lang=\"he\"><head><meta charset=\"UTF-8\"><style>body{font-family:Arial,sans-serif;direction:rtl;padding:40px}h1{color:#1a1a1a}table{width:100%;border-collapse:collapse;margin-top:20px}td,th{border:1px solid #ccc;padding:10px;text-align:right}.total{font-weight:bold;font-size:1.2em}</style></head><body><h1>חשבונית מס מספר {{ $json.fields.InvoiceNumber }}</h1><p>תאריך: {{ $json.fields.Created }}</p><p>לקוח: {{ $json.fields.CustomerId }}</p><table><tr><th>סכום לפני מע\"מ</th><td>{{ $json.fields.Amount }} ש\"ח</td></tr><tr><th>מע\"מ</th><td>{{ $json.fields.VatAmount }} ש\"ח</td></tr><tr class=\"total\"><th>סה\"כ לתשלום</th><td>{{ $json.fields.Total }} ש\"ח</td></tr></table></body></html>"}]}}},
+    {"id":"10c3b20a-adea-40e3-a194-d26a76d4134b","name":"Upload Invoice To Drive","type":"n8n-nodes-base.googleDrive","typeVersion":3,"position":[900,300],"parameters":{"resource":"file","operation":"createFromText","content":"={{ $json.html }}","name":"=חשבונית-{{ $json.fields.InvoiceNumber }}.html"},"credentials":{"googleDriveOAuth2Api":{"id":"0tzRipob3FSZ2ogw","name":"Google Drive account"}}},
+    {"id":"bef4d727-e4e4-4ecc-b4a2-f9ce4800a754","name":"Mark Invoice Done","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[1120,300],"parameters":{"resource":"record","operation":"update","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tbl58gkebHkGzwEOv"},"columns":{"mappingMode":"defineBelow","matchingColumns":["id"],"value":{"id":"={{ $(\"Fetch Ready Invoices\").item.json.id }}","Status":"done","PdfUrl":"=https://drive.google.com/file/d/{{ $json.id }}/view"},"schema":[]}},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}}
+  ],
+  "connections": {
+    "Every Minute": {"main": [[{"node":"Fetch Ready Invoices","type":"main","index":0}]]},
+    "Fetch Ready Invoices": {"main": [[{"node":"Build Invoice HTML","type":"main","index":0}]]},
+    "Build Invoice HTML": {"main": [[{"node":"Upload Invoice To Drive","type":"main","index":0}]]},
+    "Upload Invoice To Drive": {"main": [[{"node":"Mark Invoice Done","type":"main","index":0}]]}
+  }
+}

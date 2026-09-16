@@ -1,0 +1,21 @@
+{
+  "name": "WF9 - Manager Agent",
+  "nodes": [
+    {"id":"c9bc37a8-df08-4949-8276-485feb31494b","name":"Manager Message","type":"n8n-nodes-base.telegramTrigger","typeVersion":1.5,"position":[240,300],"parameters":{"updates":["message"]},"credentials":{"telegramApi":{"id":"Yjr1nbw7D5Obyywy","name":"Telegram - Manager"}}},
+    {"id":"a0a6f7e2-bf9c-4543-8d28-80d38159836a","name":"Is Owner?","type":"n8n-nodes-base.if","typeVersion":2.3,"position":[460,300],"parameters":{"conditions":{"options":{"caseSensitive":true,"leftValue":"","typeValidation":"loose"},"conditions":[{"leftValue":"={{ $('Manager Message').item.json.message.chat.id }}","operator":{"type":"string","operation":"equals"},"rightValue":"5705479677"}],"combinator":"and"}}},
+    {"id":"84f8b761-bc42-421b-9310-909866f9d327","name":"Fetch Invoices","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[680,220],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tbl58gkebHkGzwEOv"},"returnAll":false,"limit":100},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"15eeb4cf-92c4-46f5-93ca-7b935d45ac39","name":"Summarize Invoices","type":"n8n-nodes-base.summarize","typeVersion":1.1,"position":[900,220],"parameters":{"fieldsToSummarize":{"values":[{"aggregation":"sum","field":"fields.Total"},{"aggregation":"count","field":"fields.InvoiceNumber"}]},"fieldsToSplitBy":"fields.Status","options":{"outputFormat":"separateItems"}}},
+    {"id":"ce0bf273-acd8-40cf-b4c6-f44e9f445b39","name":"Manager Agent","type":"@n8n/n8n-nodes-langchain.agent","typeVersion":3.1,"position":[1120,220],"parameters":{"promptType":"define","text":"=שאלת הבעלים: {{ $(\"Manager Message\").item.json.message.text }}\n\nנתונים מסוכמים מטבלת החשבוניות, מקובצים לפי סטטוס (JSON): {{ JSON.stringify($input.all().map(i => i.json)) }}","options":{"systemMessage":"את/ה עוזר/ת אנליטיקה לבעלים של עסק אלקטרוניקה ישראלי. תפקידך לענות בעברית בלבד, בקצרה ובבהירות, על שאלות לגבי הכנסות, מספר חשבוניות וסכומים שלא שולמו - בהתבסס אך ורק על הנתונים המסוכמים שסופקו לך בהודעה. אל תמציא/י מספרים. אם השאלה אינה קשורה לנתונים עסקיים, ציין/י בנימוס שאת/ה עוזר/ת אנליטיקה בלבד."}}},
+    {"id":"52f25a30-eb6f-4bfe-aee0-87591137541f","name":"OpenAI Model","type":"@n8n/n8n-nodes-langchain.lmChatOpenAi","typeVersion":1.3,"position":[1000,400],"parameters":{"model":{"__rl":true,"mode":"list","value":"gpt-5-mini","cachedResultName":"gpt-5-mini"}},"credentials":{"openAiApi":{"id":"NYa2yLeKkagRKcx1","name":"OpenAI account"}}},
+    {"id":"0ce794a5-ca3c-4052-b74b-a7c369d87f46","name":"Send Manager Reply","type":"n8n-nodes-base.telegram","typeVersion":1.2,"position":[1340,220],"parameters":{"resource":"message","operation":"sendMessage","chatId":"={{ $('Manager Message').item.json.message.chat.id }}","text":"={{ $json.output }}","additionalFields":{"appendAttribution":false}},"credentials":{"telegramApi":{"id":"Yjr1nbw7D5Obyywy","name":"Telegram - Manager"}}},
+    {"id":"00154b02-5212-4fc0-8a0b-7e90f4dc9e3b","name":"Send Unauthorized Reply","type":"n8n-nodes-base.telegram","typeVersion":1.2,"position":[680,420],"parameters":{"resource":"message","operation":"sendMessage","chatId":"={{ $('Manager Message').item.json.message.chat.id }}","text":"אין לך הרשאה להשתמש בסוכן זה.","additionalFields":{"appendAttribution":false}},"credentials":{"telegramApi":{"id":"Yjr1nbw7D5Obyywy","name":"Telegram - Manager"}}}
+  ],
+  "connections": {
+    "Manager Message": {"main": [[{"node":"Is Owner?","type":"main","index":0}]]},
+    "Is Owner?": {"main": [[{"node":"Fetch Invoices","type":"main","index":0}],[{"node":"Send Unauthorized Reply","type":"main","index":0}]]},
+    "Fetch Invoices": {"main": [[{"node":"Summarize Invoices","type":"main","index":0}]]},
+    "Summarize Invoices": {"main": [[{"node":"Manager Agent","type":"main","index":0}]]},
+    "Manager Agent": {"main": [[{"node":"Send Manager Reply","type":"main","index":0}]]},
+    "OpenAI Model": {"ai_languageModel": [[{"node":"Manager Agent","type":"ai_languageModel","index":0}]]}
+  }
+}

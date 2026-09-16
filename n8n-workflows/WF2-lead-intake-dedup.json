@@ -1,0 +1,17 @@
+{
+  "name": "WF2 - Lead Intake & Deduplication",
+  "nodes": [
+    {"id":"65bd4093-3f76-490a-a3e9-1b01f56a7bef","name":"New Lead","type":"n8n-nodes-base.airtableTrigger","typeVersion":1,"position":[240,300],"parameters":{"pollTimes":{"item":[{"mode":"everyMinute"}]},"baseId":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"tableId":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"triggerField":"Created","downloadAttachments":false,"authentication":"airtableTokenApi"},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"df563496-1b56-4d21-8ece-02bb3f799ad0","name":"Find Leads With Same Email","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[460,300],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"filterByFormula":"={{ '{Email} = \\'' + $json.fields.Email + '\\'' }}","returnAll":true},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"63263e86-b6c5-4bf6-b93f-4f7d21b2dad3","name":"Count Matches","type":"n8n-nodes-base.summarize","typeVersion":1.1,"position":[680,300],"parameters":{"fieldsToSummarize":{"values":[{"aggregation":"count","field":"id"}]},"options":{"outputFormat":"singleItem"}}},
+    {"id":"b6adc3ea-6354-4519-96e9-832fd3690b6d","name":"Is Duplicate?","type":"n8n-nodes-base.if","typeVersion":2.3,"position":[900,300],"parameters":{"conditions":{"options":{"caseSensitive":true,"leftValue":"","typeValidation":"loose"},"conditions":[{"leftValue":"={{ $json.count_id }}","operator":{"type":"number","operation":"gt"},"rightValue":1}],"combinator":"and"}}},
+    {"id":"93855d91-19d4-42e5-89e9-6a0a6d34f03b","name":"Mark As Duplicate","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[1120,220],"parameters":{"resource":"record","operation":"update","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"columns":{"mappingMode":"defineBelow","matchingColumns":["id"],"value":{"id":"={{ $(\"New Lead\").item.json.id }}","Status":"duplicate"},"schema":[]}},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
+    {"id":"7573a753-0a75-4cbe-82e9-be0ad2846335","name":"Mark As New","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[1120,380],"parameters":{"resource":"record","operation":"update","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"columns":{"mappingMode":"defineBelow","matchingColumns":["id"],"value":{"id":"={{ $(\"New Lead\").item.json.id }}","Status":"new"},"schema":[]}},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}}
+  ],
+  "connections": {
+    "New Lead": {"main": [[{"node":"Find Leads With Same Email","type":"main","index":0}]]},
+    "Find Leads With Same Email": {"main": [[{"node":"Count Matches","type":"main","index":0}]]},
+    "Count Matches": {"main": [[{"node":"Is Duplicate?","type":"main","index":0}]]},
+    "Is Duplicate?": {"main": [[{"node":"Mark As Duplicate","type":"main","index":0}],[{"node":"Mark As New","type":"main","index":0}]]}
+  }
+}
