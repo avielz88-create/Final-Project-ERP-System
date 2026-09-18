@@ -1,42 +1,575 @@
 {
   "name": "WF6 - Policy -> Vector Store",
   "nodes": [
-    {"id":"2632ab6d-aa12-4ced-ba92-f3e731720de3","name":"Run Manually","type":"n8n-nodes-base.manualTrigger","typeVersion":1,"position":[240,300],"parameters":{}},
-    {"id":"0fcde283-4e31-4b27-9042-da6ad406bf3e","name":"Doc01","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,140],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d1","name":"text","type":"string","value":"[מדיניות החזרות והחזרים — המסמך המלא נמצא ב-policy-source/01-returns-and-refunds.md]"}]}}},
-    {"id":"3732a61f-2177-45c6-85de-8e4fb1b435b3","name":"Doc02","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,200],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d2","name":"text","type":"string","value":"[מדיניות אחריות — המסמך המלא נמצא ב-policy-source/02-warranty.md]"}]}}},
-    {"id":"96a245b1-ac31-4e65-a575-ed62d5002977","name":"Doc03","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,260],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d3","name":"text","type":"string","value":"[משלוחים ואספקה — המסמך המלא נמצא ב-policy-source/03-shipping-and-delivery.md]"}]}}},
-    {"id":"888e37f8-1bd7-4500-b24f-268e972fc738","name":"Doc04","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,320],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d4","name":"text","type":"string","value":"[מדיניות מחירים והנחות — המסמך המלא נמצא ב-policy-source/04-pricing-and-discounts.md]"}]}}},
-    {"id":"0c7b8f88-40ef-4025-9cac-b4a9434adcf1","name":"Doc05","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,380],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d5","name":"text","type":"string","value":"[תשלומים וחשבוניות — המסמך המלא נמצא ב-policy-source/05-payment-and-invoicing.md]"}]}}},
-    {"id":"ac3e4ec4-6514-4289-a707-69d9fc7c6409","name":"Doc06","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,440],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d6","name":"text","type":"string","value":"[חוקי חשבוניות ומע\"מ — המסמך המלא נמצא ב-policy-source/06-israeli-tax-invoice-rules.md]"}]}}},
-    {"id":"a4094ed9-4c8c-46d3-a17a-ffc071f1bcfa","name":"Doc07","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,500],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d7","name":"text","type":"string","value":"[Agent Guardrails — full document at policy-source/07-agent-guardrails.md]"}]}}},
-    {"id":"09891745-b4bd-4393-a87b-a04ec60febd1","name":"Doc08","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,560],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d8","name":"text","type":"string","value":"[Customer-Service Tone — full document at policy-source/08-customer-service-tone.md]"}]}}},
-    {"id":"87994efd-3b63-4d55-917a-c4f3dc217a9b","name":"Doc09","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,620],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d9","name":"text","type":"string","value":"[Sales Agent Playbook — full document at policy-source/09-sales-agent-playbook.md]"}]}}},
-    {"id":"fa8b1a96-7f5b-4e8c-bf94-850302801ff4","name":"Doc10","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,680],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d10","name":"text","type":"string","value":"[Manager Agent Brief — full document at policy-source/10-manager-agent-brief.md]"}]}}},
-    {"id":"27b1336c-7b24-4133-93ff-9f244e561319","name":"Doc11","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,740],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d11","name":"text","type":"string","value":"[סקירת העסק — המסמך המלא נמצא ב-policy-source/11-business-overview.md]"}]}}},
-    {"id":"17a26754-77c3-4637-80c8-0d348d86bc62","name":"Doc12","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[460,800],"parameters":{"mode":"manual","includeOtherFields":false,"assignments":{"assignments":[{"id":"d12","name":"text","type":"string","value":"[שאלות נפוצות — המסמך המלא נמצא ב-policy-source/12-faq.md]"}]}}},
-    {"id":"0ee784e8-8026-4ff7-b995-8f2345dd6d60","name":"Policy Documents","type":"n8n-nodes-base.code","typeVersion":2,"position":[680,300],"parameters":{"mode":"runOnceForAllItems","language":"javaScript","jsCode":"const docs = [];\n\ndocs.push({ source: '01-returns-and-refunds.md', text: $node['Doc01'].json.text });\ndocs.push({ source: '02-warranty.md', text: $node['Doc02'].json.text });\ndocs.push({ source: '03-shipping-and-delivery.md', text: $node['Doc03'].json.text });\ndocs.push({ source: '04-pricing-and-discounts.md', text: $node['Doc04'].json.text });\ndocs.push({ source: '05-payment-and-invoicing.md', text: $node['Doc05'].json.text });\ndocs.push({ source: '06-israeli-tax-invoice-rules.md', text: $node['Doc06'].json.text });\ndocs.push({ source: '07-agent-guardrails.md', text: $node['Doc07'].json.text });\ndocs.push({ source: '08-customer-service-tone.md', text: $node['Doc08'].json.text });\ndocs.push({ source: '09-sales-agent-playbook.md', text: $node['Doc09'].json.text });\ndocs.push({ source: '10-manager-agent-brief.md', text: $node['Doc10'].json.text });\ndocs.push({ source: '11-business-overview.md', text: $node['Doc11'].json.text });\ndocs.push({ source: '12-faq.md', text: $node['Doc12'].json.text });\n\nreturn docs.map(d => ({ json: { text: d.text, source: d.source } }));\n"}},
-    {"id":"49c84ba2-bd0f-4f17-9a6f-ec848cb6a566","name":"Insert Policy Into Vector Store","type":"@n8n/n8n-nodes-langchain.vectorStoreInMemory","typeVersion":1.3,"position":[900,300],"parameters":{"mode":"insert","memoryKey":{"__rl":true,"mode":"list","value":"erp-knowledge","cachedResultName":"erp-knowledge"},"clearStore":true}},
-    {"id":"12aa01c2-ccbd-4e3d-a009-f0f11f984f9c","name":"Embeddings OpenAI","type":"@n8n/n8n-nodes-langchain.embeddingsOpenAi","typeVersion":1.2,"position":[900,480],"parameters":{},"credentials":{"openAiApi":{"id":"NYa2yLeKkagRKcx1","name":"OpenAI account"}}},
-    {"id":"d76ef54c-1751-447a-b96f-8c4da7906516","name":"Load Policy Document","type":"@n8n/n8n-nodes-langchain.documentDefaultDataLoader","typeVersion":1.1,"position":[1020,480],"parameters":{"dataType":"json","jsonMode":"expressionData","jsonData":"={{ $json.text }}","textSplittingMode":"custom"}},
-    {"id":"69c19c3c-248b-4a11-97e4-c1937ddc9a23","name":"Split Policy Text","type":"@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter","typeVersion":1,"position":[900,620],"parameters":{"chunkSize":500,"chunkOverlap":50}}
+    {
+      "id": "2632ab6d-aa12-4ced-ba92-f3e731720de3",
+      "name": "Run Manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        700
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "0fcde283-4e31-4b27-9042-da6ad406bf3e",
+      "name": "Doc01",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        100
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d1",
+              "name": "text",
+              "type": "string",
+              "value": "[מדיניות החזרות והחזרים — המסמך המלא נמצא ב-policy-source/01-returns-and-refunds.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3732a61f-2177-45c6-85de-8e4fb1b435b3",
+      "name": "Doc02",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        220
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d2",
+              "name": "text",
+              "type": "string",
+              "value": "[מדיניות אחריות — המסמך המלא נמצא ב-policy-source/02-warranty.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "96a245b1-ac31-4e65-a575-ed62d5002977",
+      "name": "Doc03",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        340
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3",
+              "name": "text",
+              "type": "string",
+              "value": "[משלוחים ואספקה — המסמך המלא נמצא ב-policy-source/03-shipping-and-delivery.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "888e37f8-1bd7-4500-b24f-268e972fc738",
+      "name": "Doc04",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        460
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d4",
+              "name": "text",
+              "type": "string",
+              "value": "[מדיניות מחירים והנחות — המסמך המלא נמצא ב-policy-source/04-pricing-and-discounts.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "0c7b8f88-40ef-4025-9cac-b4a9434adcf1",
+      "name": "Doc05",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        580
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5",
+              "name": "text",
+              "type": "string",
+              "value": "[תשלומים וחשבוניות — המסמך המלא נמצא ב-policy-source/05-payment-and-invoicing.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ac3e4ec4-6514-4289-a707-69d9fc7c6409",
+      "name": "Doc06",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        700
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d6",
+              "name": "text",
+              "type": "string",
+              "value": "[חוקי חשבוניות ומע\"מ — המסמך המלא נמצא ב-policy-source/06-israeli-tax-invoice-rules.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a4094ed9-4c8c-46d3-a17a-ffc071f1bcfa",
+      "name": "Doc07",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        820
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d7",
+              "name": "text",
+              "type": "string",
+              "value": "[Agent Guardrails — full document at policy-source/07-agent-guardrails.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "09891745-b4bd-4393-a87b-a04ec60febd1",
+      "name": "Doc08",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        940
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d8",
+              "name": "text",
+              "type": "string",
+              "value": "[Customer-Service Tone — full document at policy-source/08-customer-service-tone.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "87994efd-3b63-4d55-917a-c4f3dc217a9b",
+      "name": "Doc09",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        1060
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d9",
+              "name": "text",
+              "type": "string",
+              "value": "[Sales Agent Playbook — full document at policy-source/09-sales-agent-playbook.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fa8b1a96-7f5b-4e8c-bf94-850302801ff4",
+      "name": "Doc10",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        1180
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d10",
+              "name": "text",
+              "type": "string",
+              "value": "[Manager Agent Brief — full document at policy-source/10-manager-agent-brief.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "27b1336c-7b24-4133-93ff-9f244e561319",
+      "name": "Doc11",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        1300
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d11",
+              "name": "text",
+              "type": "string",
+              "value": "[סקירת העסק — המסמך המלא נמצא ב-policy-source/11-business-overview.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "17a26754-77c3-4637-80c8-0d348d86bc62",
+      "name": "Doc12",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        500,
+        1420
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d12",
+              "name": "text",
+              "type": "string",
+              "value": "[שאלות נפוצות — המסמך המלא נמצא ב-policy-source/12-faq.md]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "0ee784e8-8026-4ff7-b995-8f2345dd6d60",
+      "name": "Policy Documents",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        820,
+        700
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "const docs = [];\n\ndocs.push({ source: '01-returns-and-refunds.md', text: $node['Doc01'].json.text });\ndocs.push({ source: '02-warranty.md', text: $node['Doc02'].json.text });\ndocs.push({ source: '03-shipping-and-delivery.md', text: $node['Doc03'].json.text });\ndocs.push({ source: '04-pricing-and-discounts.md', text: $node['Doc04'].json.text });\ndocs.push({ source: '05-payment-and-invoicing.md', text: $node['Doc05'].json.text });\ndocs.push({ source: '06-israeli-tax-invoice-rules.md', text: $node['Doc06'].json.text });\ndocs.push({ source: '07-agent-guardrails.md', text: $node['Doc07'].json.text });\ndocs.push({ source: '08-customer-service-tone.md', text: $node['Doc08'].json.text });\ndocs.push({ source: '09-sales-agent-playbook.md', text: $node['Doc09'].json.text });\ndocs.push({ source: '10-manager-agent-brief.md', text: $node['Doc10'].json.text });\ndocs.push({ source: '11-business-overview.md', text: $node['Doc11'].json.text });\ndocs.push({ source: '12-faq.md', text: $node['Doc12'].json.text });\n\nreturn docs.map(d => ({ json: { text: d.text, source: d.source } }));\n"
+      }
+    },
+    {
+      "id": "49c84ba2-bd0f-4f17-9a6f-ec848cb6a566",
+      "name": "Insert Policy Into Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        700
+      ],
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": {
+          "__rl": true,
+          "mode": "list",
+          "value": "erp-knowledge",
+          "cachedResultName": "erp-knowledge"
+        },
+        "clearStore": true
+      }
+    },
+    {
+      "id": "12aa01c2-ccbd-4e3d-a009-f0f11f984f9c",
+      "name": "Embeddings OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        900,
+        900
+      ],
+      "parameters": {},
+      "credentials": {
+        "openAiApi": {
+          "id": "NYa2yLeKkagRKcx1",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "id": "d76ef54c-1751-447a-b96f-8c4da7906516",
+      "name": "Load Policy Document",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        900
+      ],
+      "parameters": {
+        "dataType": "json",
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.text }}",
+        "textSplittingMode": "custom"
+      }
+    },
+    {
+      "id": "69c19c3c-248b-4a11-97e4-c1937ddc9a23",
+      "name": "Split Policy Text",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        1080
+      ],
+      "parameters": {
+        "chunkSize": 500,
+        "chunkOverlap": 50
+      }
+    }
   ],
   "connections": {
-    "Run Manually": {"main": [[{"node":"Doc01","type":"main","index":0}]]},
-    "Doc01": {"main": [[{"node":"Doc02","type":"main","index":0}]]},
-    "Doc02": {"main": [[{"node":"Doc03","type":"main","index":0}]]},
-    "Doc03": {"main": [[{"node":"Doc04","type":"main","index":0}]]},
-    "Doc04": {"main": [[{"node":"Doc05","type":"main","index":0}]]},
-    "Doc05": {"main": [[{"node":"Doc06","type":"main","index":0}]]},
-    "Doc06": {"main": [[{"node":"Doc07","type":"main","index":0}]]},
-    "Doc07": {"main": [[{"node":"Doc08","type":"main","index":0}]]},
-    "Doc08": {"main": [[{"node":"Doc09","type":"main","index":0}]]},
-    "Doc09": {"main": [[{"node":"Doc10","type":"main","index":0}]]},
-    "Doc10": {"main": [[{"node":"Doc11","type":"main","index":0}]]},
-    "Doc11": {"main": [[{"node":"Doc12","type":"main","index":0}]]},
-    "Doc12": {"main": [[{"node":"Policy Documents","type":"main","index":0}]]},
-    "Policy Documents": {"main": [[{"node":"Insert Policy Into Vector Store","type":"main","index":0}]]},
-    "Embeddings OpenAI": {"ai_embedding": [[{"node":"Insert Policy Into Vector Store","type":"ai_embedding","index":0}]]},
-    "Load Policy Document": {"ai_document": [[{"node":"Insert Policy Into Vector Store","type":"ai_document","index":0}]]},
-    "Split Policy Text": {"ai_textSplitter": [[{"node":"Load Policy Document","type":"ai_textSplitter","index":0}]]}
+    "Run Manually": {
+      "main": [
+        [
+          {
+            "node": "Doc01",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc01": {
+      "main": [
+        [
+          {
+            "node": "Doc02",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc02": {
+      "main": [
+        [
+          {
+            "node": "Doc03",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc03": {
+      "main": [
+        [
+          {
+            "node": "Doc04",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc04": {
+      "main": [
+        [
+          {
+            "node": "Doc05",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc05": {
+      "main": [
+        [
+          {
+            "node": "Doc06",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc06": {
+      "main": [
+        [
+          {
+            "node": "Doc07",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc07": {
+      "main": [
+        [
+          {
+            "node": "Doc08",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc08": {
+      "main": [
+        [
+          {
+            "node": "Doc09",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc09": {
+      "main": [
+        [
+          {
+            "node": "Doc10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc10": {
+      "main": [
+        [
+          {
+            "node": "Doc11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc11": {
+      "main": [
+        [
+          {
+            "node": "Doc12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Doc12": {
+      "main": [
+        [
+          {
+            "node": "Policy Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Policy Documents": {
+      "main": [
+        [
+          {
+            "node": "Insert Policy Into Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert Policy Into Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Policy Document": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert Policy Into Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Policy Text": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Load Policy Document",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    }
   }
 }
