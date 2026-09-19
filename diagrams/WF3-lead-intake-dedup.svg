@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 356" width="1130" height="356" font-family="Helvetica, Arial, sans-serif">
 <rect width="100%" height="100%" fill="#f8fafc"/>
-<text x="20" y="34" font-size="22" font-weight="700" fill="#0f172a">WF2 - Lead Intake &amp; Deduplication</text>
+<text x="20" y="34" font-size="22" font-weight="700" fill="#0f172a">WF3 - Lead Intake &amp; Deduplication</text>
 <path d="M200,198.0 C240,198.0 230,198.0 270,198.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
 <circle cx="270" cy="198.0" r="4" fill="#94a3b8"/>
 <path d="M420,198.0 C460,198.0 450,198.0 490,198.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>

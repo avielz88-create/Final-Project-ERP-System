@@ -82,6 +82,8 @@ flowchart TB
 
 כל workflow שמור גם כקובץ JSON לייבוא חוזר ב-[`n8n-workflows/`](n8n-workflows/).
 
+המספור הלא-רציף (אין WF2, WF10, WF11, WF12) נובע ממדריך הקורס, שבו המספרים האלה הושמטו בכוונה כדי לשמור על מספור יציב. סוכן המכירות מפוצל ל-WF4a (מיילים קרים) ול-WF4b (בדיקת תשובות).
+
 | # | שם | טריגר | מה עושה | נבדק בפועל |
 |---|-----|--------|---------|:---:|
 | WF6 | [מדיניות → מאגר וקטורי](n8n-workflows/WF6-policy-vector-store.json) | ידני | טוען 12 מסמכי מדיניות אמיתיים (ראו [`policy-source/`](policy-source/)), מפצל, ממיר ל-embeddings, ושומר במאגר הווקטורי המשותף | ✅ |
@@ -90,9 +92,9 @@ flowchart TB
 | WF9 | [סוכן המנהל](n8n-workflows/WF9-manager-agent.json) | בוט טלגרם (מנהל) | מוגבל ל-Chat ID של הבעלים בלבד; מסכם הכנסות/חשבוניות מ-Airtable ועונה בעברית | ✅ נבדק חי בטלגרם |
 | WF1 | [אימות מסמכי מס + מע"מ](n8n-workflows/WF1-invoice-validation.json) | Airtable Trigger (Invoices) | מחשב מע"מ (18% מ-2025, אחרת 17%), נותן מספר חשבונית עוקב, מסמן "מוכן להפקה" | ✅ נבדק מקצה לקצה |
 | WF8 | [הפקת חשבונית + דרייב](n8n-workflows/WF8-invoice-document-drive.json) | Schedule (כל דקה) | בונה HTML בעברית RTL, מעלה ל-Google Drive, מעדכן קישור וסטטוס | ✅ נבדק מקצה לקצה |
-| WF2 | [קליטת ליד + סינון כפילויות](n8n-workflows/WF2-lead-intake-dedup.json) | Airtable Trigger (Leads) | סופר לידים קיימים עם אותו אימייל, מסמן "כפילות" או "חדש" | ✅ נבדק חי (3 לידי בדיקה) |
-| WF3 | [סוכן מכירות — מיילים קרים](n8n-workflows/WF3-sales-cold-email.json) | Schedule (כל 3 שעות) | סוכן AI מנסח מייל קר לליד אחד, שולח ב-Gmail, מסמן "נוצר קשר" | ✅ נבדק חי — נשלח מייל אמיתי |
-| WF4 | [סוכן מכירות — בדיקת תשובות](n8n-workflows/WF4-sales-reply-check.json) | Schedule (כל 30 דק', Gmail) | קורא תשובות מייל, מתאים לליד לפי כתובת השולח, מסווג עניין באמצעות AI | ✅ נבדק חי — תשובה אמיתית סווגה נכון |
+| WF3 | [קליטת ליד + סינון כפילויות](n8n-workflows/WF3-lead-intake-dedup.json) | Airtable Trigger (Leads) | סופר לידים קיימים עם אותו אימייל, מסמן "כפילות" או "חדש" | ✅ נבדק חי (3 לידי בדיקה) |
+| WF4a | [סוכן מכירות — מיילים קרים](n8n-workflows/WF4a-sales-cold-email.json) | Schedule (כל 3 שעות) | סוכן AI מנסח מייל קר לליד אחד, שולח ב-Gmail, מסמן "נוצר קשר" | ✅ נבדק חי — נשלח מייל אמיתי |
+| WF4b | [סוכן מכירות — בדיקת תשובות](n8n-workflows/WF4b-sales-reply-check.json) | Schedule (כל 30 דק', Gmail) | קורא תשובות מייל, מתאים לליד לפי כתובת השולח, מסווג עניין באמצעות AI | ✅ נבדק חי — תשובה אמיתית סווגה נכון |
 | WF13 | [Webhook לאפליקציה](n8n-workflows/WF13-app-webhook.json) | Webhook (POST) | נקודת כניסה אחת ל-Lovable: `chat` (צ'אט RAG), `list` (קריאת טבלה), אחרת (יצירת רשומה) | ✅ נבדק — שלוש הפעולות |
 
 ## תרשימי ה-Workflows
@@ -103,17 +105,17 @@ flowchart TB
 
 ![WF1](diagrams/WF1-invoice-validation.svg)
 
-### WF2 — קליטת ליד + סינון כפילויות
+### WF3 — קליטת ליד + סינון כפילויות
 
-![WF2](diagrams/WF2-lead-intake-dedup.svg)
+![WF3](diagrams/WF3-lead-intake-dedup.svg)
 
-### WF3 — סוכן מכירות — מיילים קרים
+### WF4a — סוכן מכירות — מיילים קרים
 
-![WF3](diagrams/WF3-sales-cold-email.svg)
+![WF4a](diagrams/WF4a-sales-cold-email.svg)
 
-### WF4 — סוכן מכירות — בדיקת תשובות
+### WF4b — סוכן מכירות — בדיקת תשובות
 
-![WF4](diagrams/WF4-sales-reply-check.svg)
+![WF4b](diagrams/WF4b-sales-reply-check.svg)
 
 ### WF5 — סוכן שירות לקוחות
 
@@ -188,7 +190,7 @@ POST https://avielz.app.n8n.cloud/webhook/erp
 3. **Credentials ב-n8n:** מחברים Airtable, OpenAI, שני חשבונות Telegram, Gmail, Google Drive.
 4. **מייבאים workflows:** ב-n8n → Workflows → Import from File, לכל אחד מהקבצים ב-`n8n-workflows/`. מעדכנים credentials בכל node.
 5. **ממלאים את המאגר הווקטורי:** מריצים ידנית WF6 ואז WF7.
-6. **מפעילים (Activate):** WF1, WF2, WF3, WF4, WF5, WF8, WF9, WF13.
+6. **מפעילים (Activate):** WF1, WF3, WF4a, WF4b, WF5, WF8, WF9, WF13.
 7. **בונים את האפליקציה** ב-Lovable מול כתובת ה-webhook (ראו סעיף למעלה).
 
 ## באגים שנמצאו ותוקנו תוך כדי בדיקה
@@ -197,8 +199,8 @@ POST https://avielz.app.n8n.cloud/webhook/erp
 
 1. **WF7 — שדות ריקים:** צמתי Airtable מחזירים את השדות תחת `$json.fields.X`, לא `$json.X` ישירות. גרם לטקסט ריק בהוספה הראשונה למאגר הווקטורי. תוקן.
 4. **InStock — טקסט מספרי במקום checkbox:** לאחר ייבוא הקטלוג האמיתי התברר ששדה הזמינות הוא checkbox (יש מוצר "אזל זמנית"), לא כמות מספרית כמו שהוגדר בהתחלה. שונה סוג השדה ב-Airtable ל-Checkbox, ועודכן הניסוח ב-WF7 בהתאם ("במלאי" / "אזל זמנית").
-2. **WF2 — זיהוי כפילויות שגוי:** ה-IF בדק `$json.id` בעוד ששדה הפלט של Summarize נקרא בפועל `count_id`. גרם לזה שכפילויות סומנו כ-"חדש" בטעות. תוקן ואומת עם 3 לידי בדיקה.
-3. **WF4 — התאמת ליד שגויה:** ה-Gmail Trigger תפס גם מיילים לא-קשורים (התראות) מהתיבה, וסינון לפי כתובת השולח לא עבד כראוי כשהיה משולב בתוך בניית הנוסחה. נפתר בצומת נפרד לחילוץ האימייל + הגבלת החיפוש ל-`category:primary` בלבד.
+2. **WF3 — זיהוי כפילויות שגוי:** ה-IF בדק `$json.id` בעוד ששדה הפלט של Summarize נקרא בפועל `count_id`. גרם לזה שכפילויות סומנו כ-"חדש" בטעות. תוקן ואומת עם 3 לידי בדיקה.
+3. **WF4b — התאמת ליד שגויה:** ה-Gmail Trigger תפס גם מיילים לא-קשורים (התראות) מהתיבה, וסינון לפי כתובת השולח לא עבד כראוי כשהיה משולב בתוך בניית הנוסחה. נפתר בצומת נפרד לחילוץ האימייל + הגבלת החיפוש ל-`category:primary` בלבד.
 
 ## מגבלות ידועות (בכוונה, לשם פשטות)
 

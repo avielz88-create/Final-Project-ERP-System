@@ -1,5 +1,5 @@
 {
-  "name": "WF3 - Sales Agent Cold Email",
+  "name": "WF4a - Sales Agent Cold Email",
   "nodes": [
     {"id":"619d1e82-57b3-4102-8c78-79591c2a555e","name":"Every 3 Hours","type":"n8n-nodes-base.scheduleTrigger","typeVersion":1.4,"position":[240,300],"parameters":{"rule":{"interval":[{"field":"hours","hoursInterval":3}]}}},
     {"id":"9c2dc03f-ffa2-4548-8039-a06cd6324916","name":"Fetch One New Lead","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[460,300],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"filterByFormula":"{Status} = 'new'","returnAll":false,"limit":1},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},

@@ -1,5 +1,5 @@
 {
-  "name": "WF4 - Sales Agent Reply Check",
+  "name": "WF4b - Sales Agent Reply Check",
   "nodes": [
     {"id":"1770eebe-6187-43eb-ad40-48ef949b03a4","name":"Check For Replies","type":"n8n-nodes-base.gmailTrigger","typeVersion":1.4,"position":[240,300],"parameters":{"pollTimes":{"item":[{"mode":"everyX","unit":"minutes","value":30}]},"simple":true,"filters":{"readStatus":"unread","q":"is:unread category:primary"}},"credentials":{"gmailOAuth2":{"id":"tokm3C0osXIjtsBz","name":"Gmail OAuth2 API"}}},
     {"id":"cdcf2f8a-d879-464c-8206-3e634dc31e97","name":"Extract Sender Email","type":"n8n-nodes-base.set","typeVersion":3.5,"position":[350,300],"parameters":{"mode":"manual","includeOtherFields":true,"assignments":{"assignments":[{"id":"sender-email","name":"senderEmail","type":"string","value":"={{ $json.from.match(/<(.+)>/) ? $json.from.match(/<(.+)>/)[1] : $json.from }}"}]}}},

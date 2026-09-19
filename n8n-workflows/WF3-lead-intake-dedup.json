@@ -1,5 +1,5 @@
 {
-  "name": "WF2 - Lead Intake & Deduplication",
+  "name": "WF3 - Lead Intake & Deduplication",
   "nodes": [
     {"id":"65bd4093-3f76-490a-a3e9-1b01f56a7bef","name":"New Lead","type":"n8n-nodes-base.airtableTrigger","typeVersion":1,"position":[240,300],"parameters":{"pollTimes":{"item":[{"mode":"everyMinute"}]},"baseId":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"tableId":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"triggerField":"Created","downloadAttachments":false,"authentication":"airtableTokenApi"},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
     {"id":"df563496-1b56-4d21-8ece-02bb3f799ad0","name":"Find Leads With Same Email","type":"n8n-nodes-base.airtable","typeVersion":2.2,"position":[460,300],"parameters":{"resource":"record","operation":"search","base":{"__rl":true,"mode":"id","value":"apprLBNlsuitEDHY8"},"table":{"__rl":true,"mode":"id","value":"tblww5sc3Qs2lJy8b"},"filterByFormula":"={{ '{Email} = \\'' + $json.fields.Email + '\\'' }}","returnAll":true},"credentials":{"airtableTokenApi":{"id":"SruoXppp7lXPqP0Q","name":"Airtable Personal Access Token account 3"}}},
