@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 1516" width="1130" height="1516" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="20" y="34" font-size="22" font-weight="700" fill="#0f172a">WF6 - Policy -&gt; Vector Store</text>
+<path d="M200,718.0 C255.0,718.0 255.0,118.0 310,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M460,118.0 C535.0,118.0 235.0,238.0 310,238.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="238.0" r="4" fill="#94a3b8"/>
+<path d="M460,238.0 C535.0,238.0 235.0,358.0 310,358.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="358.0" r="4" fill="#94a3b8"/>
+<path d="M460,358.0 C535.0,358.0 235.0,478.0 310,478.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="478.0" r="4" fill="#94a3b8"/>
+<path d="M460,478.0 C535.0,478.0 235.0,598.0 310,598.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="598.0" r="4" fill="#94a3b8"/>
+<path d="M460,598.0 C535.0,598.0 235.0,718.0 310,718.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="718.0" r="4" fill="#94a3b8"/>
+<path d="M460,718.0 C535.0,718.0 235.0,838.0 310,838.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="838.0" r="4" fill="#94a3b8"/>
+<path d="M460,838.0 C535.0,838.0 235.0,958.0 310,958.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="958.0" r="4" fill="#94a3b8"/>
+<path d="M460,958.0 C535.0,958.0 235.0,1078.0 310,1078.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="1078.0" r="4" fill="#94a3b8"/>
+<path d="M460,1078.0 C535.0,1078.0 235.0,1198.0 310,1198.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="1198.0" r="4" fill="#94a3b8"/>
+<path d="M460,1198.0 C535.0,1198.0 235.0,1318.0 310,1318.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="1318.0" r="4" fill="#94a3b8"/>
+<path d="M460,1318.0 C535.0,1318.0 235.0,1438.0 310,1438.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="310" cy="1438.0" r="4" fill="#94a3b8"/>
+<path d="M460,1438.0 C545.0,1438.0 545.0,718.0 630,718.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="630" cy="718.0" r="4" fill="#94a3b8"/>
+<path d="M780,718.0 C855.0,718.0 855.0,718.0 930,718.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="930" cy="718.0" r="4" fill="#94a3b8"/>
+<path d="M785.0,890 C785.0,840 1005.0,796 1005.0,746" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M1005.0,890 C1005.0,840 1005.0,796 1005.0,746" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M1005.0,1070 C1005.0,1020 1005.0,996 1005.0,946" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="50" y="690" width="150" height="56" rx="10" fill="#fff" stroke="#1e9e6a" stroke-width="2.5"/>
+<rect x="50" y="690" width="8" height="56" rx="4" fill="#1e9e6a"/>
+<text x="68" y="714" font-size="13" font-weight="600" fill="#0f172a">Run Manually</text>
+<text x="68" y="732" font-size="11" fill="#64748b">manualTrigger</text>
+<rect x="310" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="90" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="114" font-size="13" font-weight="600" fill="#0f172a">Doc01</text>
+<text x="328" y="132" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="210" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="210" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="234" font-size="13" font-weight="600" fill="#0f172a">Doc02</text>
+<text x="328" y="252" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="330" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="330" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="354" font-size="13" font-weight="600" fill="#0f172a">Doc03</text>
+<text x="328" y="372" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="450" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="450" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="474" font-size="13" font-weight="600" fill="#0f172a">Doc04</text>
+<text x="328" y="492" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="570" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="570" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="594" font-size="13" font-weight="600" fill="#0f172a">Doc05</text>
+<text x="328" y="612" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="690" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="690" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="714" font-size="13" font-weight="600" fill="#0f172a">Doc06</text>
+<text x="328" y="732" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="810" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="810" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="834" font-size="13" font-weight="600" fill="#0f172a">Doc07</text>
+<text x="328" y="852" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="930" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="930" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="954" font-size="13" font-weight="600" fill="#0f172a">Doc08</text>
+<text x="328" y="972" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="1050" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="1050" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="1074" font-size="13" font-weight="600" fill="#0f172a">Doc09</text>
+<text x="328" y="1092" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="1170" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="1170" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="1194" font-size="13" font-weight="600" fill="#0f172a">Doc10</text>
+<text x="328" y="1212" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="1290" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="1290" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="1314" font-size="13" font-weight="600" fill="#0f172a">Doc11</text>
+<text x="328" y="1332" font-size="11" fill="#64748b">set</text>
+<rect x="310" y="1410" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="310" y="1410" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="328" y="1434" font-size="13" font-weight="600" fill="#0f172a">Doc12</text>
+<text x="328" y="1452" font-size="11" fill="#64748b">set</text>
+<rect x="630" y="690" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="630" y="690" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="648" y="714" font-size="13" font-weight="600" fill="#0f172a">Policy Documents</text>
+<text x="648" y="732" font-size="11" fill="#64748b">code</text>
+<rect x="930" y="690" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="930" y="690" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="948" y="714" font-size="13" font-weight="600" fill="#0f172a">Insert Policy Into…</text>
+<text x="948" y="732" font-size="11" fill="#64748b">vectorStoreInMemory</text>
+<rect x="710" y="890" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="710" y="890" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="728" y="914" font-size="13" font-weight="600" fill="#0f172a">Embeddings OpenAI</text>
+<text x="728" y="932" font-size="11" fill="#64748b">embeddingsOpenAi</text>
+<rect x="930" y="890" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="930" y="890" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="948" y="914" font-size="13" font-weight="600" fill="#0f172a">Load Policy Document</text>
+<text x="948" y="932" font-size="11" fill="#64748b">documentDefaultDataLoader</text>
+<rect x="930" y="1070" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="930" y="1070" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="948" y="1094" font-size="13" font-weight="600" fill="#0f172a">Split Policy Text</text>
+<text x="948" y="1112" font-size="11" fill="#64748b">textSplitterRecursiveCharacterTextSplitter</text>
+</svg>

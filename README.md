@@ -95,6 +95,50 @@ flowchart TB
 | WF4 | [סוכן מכירות — בדיקת תשובות](n8n-workflows/WF4-sales-reply-check.json) | Schedule (כל 30 דק', Gmail) | קורא תשובות מייל, מתאים לליד לפי כתובת השולח, מסווג עניין באמצעות AI | ✅ נבדק חי — תשובה אמיתית סווגה נכון |
 | WF13 | [Webhook לאפליקציה](n8n-workflows/WF13-app-webhook.json) | Webhook (POST) | נקודת כניסה אחת ל-Lovable: `chat` (צ'אט RAG), `list` (קריאת טבלה), אחרת (יצירת רשומה) | ✅ נבדק — שלוש הפעולות |
 
+## תרשימי ה-Workflows
+
+תרשים לכל workflow, נוצר אוטומטית מקבצי ה-JSON ב-[`n8n-workflows/`](n8n-workflows/) ומשקף את פריסת הצמתים בקנבס של n8n. צמתי AI בסגול, טריגרים בירוק, Airtable בכחול, וקווים מקווקווים מחברים כלי/מודל/זיכרון לסוכן.
+
+### WF1 — אימות מסמכי מס + מע"מ
+
+![WF1](diagrams/WF1-invoice-validation.svg)
+
+### WF2 — קליטת ליד + סינון כפילויות
+
+![WF2](diagrams/WF2-lead-intake-dedup.svg)
+
+### WF3 — סוכן מכירות — מיילים קרים
+
+![WF3](diagrams/WF3-sales-cold-email.svg)
+
+### WF4 — סוכן מכירות — בדיקת תשובות
+
+![WF4](diagrams/WF4-sales-reply-check.svg)
+
+### WF5 — סוכן שירות לקוחות
+
+![WF5](diagrams/WF5-customer-service-agent.svg)
+
+### WF6 — מדיניות → מאגר וקטורי
+
+![WF6](diagrams/WF6-policy-vector-store.svg)
+
+### WF7 — מוצרים → מאגר וקטורי
+
+![WF7](diagrams/WF7-products-vector-store.svg)
+
+### WF8 — הפקת חשבונית + דרייב
+
+![WF8](diagrams/WF8-invoice-document-drive.svg)
+
+### WF9 — סוכן המנהל
+
+![WF9](diagrams/WF9-manager-agent.svg)
+
+### WF13 — Webhook לאפליקציה
+
+![WF13](diagrams/WF13-app-webhook.svg)
+
 ## מקורות התוכן ל-RAG
 
 - [`policy-source/`](policy-source/) — 12 מסמכי מדיניות אמיתיים (החזרות, אחריות, משלוחים, מחירים, תשלומים, חוקי מע"מ, guardrails לסוכנים, טון שירות לקוחות, פלייבוק מכירות, תדריך סוכן מנהל, סקירת העסק, FAQ). אלו הטקסטים שנטענים בפועל ב-WF6 (בקבצי ה-JSON הם מקוצרים לתקציר, כדי לשמור את ה-repo קריא — המקור המלא תמיד כאן).

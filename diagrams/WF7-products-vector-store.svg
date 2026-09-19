@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1030 516" width="1030" height="516" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="20" y="34" font-size="22" font-weight="700" fill="#0f172a">WF7 - Products -&gt; Vector Store</text>
+<path d="M200,118.0 C240,118.0 230,118.0 270,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="270" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M420,118.0 C460,118.0 450,118.0 490,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="490" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M640,118.0 C680,118.0 670,118.0 710,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="710" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M785.0,270 C785.0,220 785.0,196 785.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M905.0,270 C905.0,220 785.0,196 785.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M785.0,410 C785.0,360 905.0,376 905.0,326" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="50" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#1e9e6a" stroke-width="2.5"/>
+<rect x="50" y="90" width="8" height="56" rx="4" fill="#1e9e6a"/>
+<text x="68" y="114" font-size="13" font-weight="600" fill="#0f172a">Run Manually</text>
+<text x="68" y="132" font-size="11" fill="#64748b">manualTrigger</text>
+<rect x="270" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="270" y="90" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="288" y="114" font-size="13" font-weight="600" fill="#0f172a">Fetch Products</text>
+<text x="288" y="132" font-size="11" fill="#64748b">airtable</text>
+<rect x="490" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="490" y="90" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="508" y="114" font-size="13" font-weight="600" fill="#0f172a">Format Product Text</text>
+<text x="508" y="132" font-size="11" fill="#64748b">set</text>
+<rect x="710" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="710" y="90" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="728" y="114" font-size="13" font-weight="600" fill="#0f172a">Insert Products In…</text>
+<text x="728" y="132" font-size="11" fill="#64748b">vectorStoreInMemory</text>
+<rect x="710" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="710" y="270" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="728" y="294" font-size="13" font-weight="600" fill="#0f172a">Embeddings OpenAI</text>
+<text x="728" y="312" font-size="11" fill="#64748b">embeddingsOpenAi</text>
+<rect x="830" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="830" y="270" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="848" y="294" font-size="13" font-weight="600" fill="#0f172a">Load Product Docum…</text>
+<text x="848" y="312" font-size="11" fill="#64748b">documentDefaultDataLoader</text>
+<rect x="710" y="410" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="710" y="410" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="728" y="434" font-size="13" font-weight="600" fill="#0f172a">Split Product Text</text>
+<text x="728" y="452" font-size="11" fill="#64748b">textSplitterRecursiveCharacterTextSplitter</text>
+</svg>

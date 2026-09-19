@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1750 1076" width="1750" height="1076" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="20" y="34" font-size="22" font-weight="700" fill="#0f172a">WF13 - App Webhook</text>
+<path d="M200,498.0 C240,498.0 230,398.0 270,398.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="270" cy="398.0" r="4" fill="#94a3b8"/>
+<path d="M420,398.0 C460,398.0 450,118.0 490,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="490" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M420,398.0 C460,398.0 450,598.0 490,598.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="490" cy="598.0" r="4" fill="#94a3b8"/>
+<path d="M640,118.0 C680,118.0 670,118.0 710,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="710" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M565.0,230 C565.0,180 565.0,196 565.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M685.0,230 C685.0,180 565.0,196 565.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M805.0,170 C805.0,120 565.0,196 565.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M805.0,310 C805.0,260 805.0,276 805.0,226" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M640,598.0 C680,598.0 670,398.0 710,398.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="710" cy="398.0" r="4" fill="#94a3b8"/>
+<path d="M640,598.0 C680,598.0 670,698.0 710,698.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="710" cy="698.0" r="4" fill="#94a3b8"/>
+<path d="M860,398.0 C925.0,398.0 925.0,118.0 990,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M860,398.0 C925.0,398.0 925.0,238.0 990,238.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="238.0" r="4" fill="#94a3b8"/>
+<path d="M860,398.0 C925.0,398.0 925.0,358.0 990,358.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="358.0" r="4" fill="#94a3b8"/>
+<path d="M860,398.0 C925.0,398.0 925.0,478.0 990,478.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="478.0" r="4" fill="#94a3b8"/>
+<path d="M860,398.0 C900,398.0 890,818.0 930,818.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="930" cy="818.0" r="4" fill="#94a3b8"/>
+<path d="M1140,118.0 C1205.0,118.0 1205.0,298.0 1270,298.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="298.0" r="4" fill="#94a3b8"/>
+<path d="M1420,298.0 C1485.0,298.0 1485.0,298.0 1550,298.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1550" cy="298.0" r="4" fill="#94a3b8"/>
+<path d="M1140,238.0 C1205.0,238.0 1205.0,298.0 1270,298.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="298.0" r="4" fill="#94a3b8"/>
+<path d="M1140,358.0 C1205.0,358.0 1205.0,298.0 1270,298.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="298.0" r="4" fill="#94a3b8"/>
+<path d="M1140,478.0 C1205.0,478.0 1205.0,298.0 1270,298.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="298.0" r="4" fill="#94a3b8"/>
+<path d="M860,698.0 C925.0,698.0 925.0,638.0 990,638.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="638.0" r="4" fill="#94a3b8"/>
+<path d="M860,698.0 C925.0,698.0 925.0,758.0 990,758.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="758.0" r="4" fill="#94a3b8"/>
+<path d="M860,698.0 C925.0,698.0 925.0,878.0 990,878.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="878.0" r="4" fill="#94a3b8"/>
+<path d="M860,698.0 C925.0,698.0 925.0,998.0 990,998.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="990" cy="998.0" r="4" fill="#94a3b8"/>
+<path d="M860,698.0 C900,698.0 890,818.0 930,818.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="930" cy="818.0" r="4" fill="#94a3b8"/>
+<path d="M1140,638.0 C1205.0,638.0 1205.0,638.0 1270,638.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="638.0" r="4" fill="#94a3b8"/>
+<path d="M1420,638.0 C1485.0,638.0 1485.0,818.0 1550,818.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1550" cy="818.0" r="4" fill="#94a3b8"/>
+<path d="M1140,758.0 C1205.0,758.0 1205.0,758.0 1270,758.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="758.0" r="4" fill="#94a3b8"/>
+<path d="M1420,758.0 C1485.0,758.0 1485.0,818.0 1550,818.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1550" cy="818.0" r="4" fill="#94a3b8"/>
+<path d="M1140,878.0 C1205.0,878.0 1205.0,878.0 1270,878.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="878.0" r="4" fill="#94a3b8"/>
+<path d="M1420,878.0 C1485.0,878.0 1485.0,818.0 1550,818.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1550" cy="818.0" r="4" fill="#94a3b8"/>
+<path d="M1140,998.0 C1205.0,998.0 1205.0,998.0 1270,998.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1270" cy="998.0" r="4" fill="#94a3b8"/>
+<path d="M1420,998.0 C1485.0,998.0 1485.0,818.0 1550,818.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="1550" cy="818.0" r="4" fill="#94a3b8"/>
+<rect x="50" y="470" width="150" height="56" rx="10" fill="#fff" stroke="#1e9e6a" stroke-width="2.5"/>
+<rect x="50" y="470" width="8" height="56" rx="4" fill="#1e9e6a"/>
+<text x="68" y="494" font-size="13" font-weight="600" fill="#0f172a">App Webhook</text>
+<text x="68" y="512" font-size="11" fill="#64748b">webhook</text>
+<rect x="270" y="370" width="150" height="56" rx="10" fill="#fff" stroke="#c2410c" stroke-width="2.5"/>
+<rect x="270" y="370" width="8" height="56" rx="4" fill="#c2410c"/>
+<text x="288" y="394" font-size="13" font-weight="600" fill="#0f172a">Is Chat Action?</text>
+<text x="288" y="412" font-size="11" fill="#64748b">if</text>
+<rect x="490" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="490" y="90" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="508" y="114" font-size="13" font-weight="600" fill="#0f172a">App Chat Agent</text>
+<text x="508" y="132" font-size="11" fill="#64748b">agent</text>
+<rect x="490" y="230" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="490" y="230" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="508" y="254" font-size="13" font-weight="600" fill="#0f172a">OpenAI Model</text>
+<text x="508" y="272" font-size="11" fill="#64748b">lmChatOpenAi</text>
+<rect x="610" y="230" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="610" y="230" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="628" y="254" font-size="13" font-weight="600" fill="#0f172a">App Chat Memory</text>
+<text x="628" y="272" font-size="11" fill="#64748b">memoryBufferWindow</text>
+<rect x="730" y="170" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="730" y="170" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="748" y="194" font-size="13" font-weight="600" fill="#0f172a">Search Knowledge B…</text>
+<text x="748" y="212" font-size="11" fill="#64748b">vectorStoreInMemory</text>
+<rect x="730" y="310" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="730" y="310" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="748" y="334" font-size="13" font-weight="600" fill="#0f172a">Knowledge Embeddings</text>
+<text x="748" y="352" font-size="11" fill="#64748b">embeddingsOpenAi</text>
+<rect x="710" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#e8792b" stroke-width="2.5"/>
+<rect x="710" y="90" width="8" height="56" rx="4" fill="#e8792b"/>
+<text x="728" y="114" font-size="13" font-weight="600" fill="#0f172a">Respond With Chat …</text>
+<text x="728" y="132" font-size="11" fill="#64748b">respondToWebhook</text>
+<rect x="490" y="570" width="150" height="56" rx="10" fill="#fff" stroke="#c2410c" stroke-width="2.5"/>
+<rect x="490" y="570" width="8" height="56" rx="4" fill="#c2410c"/>
+<text x="508" y="594" font-size="13" font-weight="600" fill="#0f172a">Is List Action?</text>
+<text x="508" y="612" font-size="11" fill="#64748b">if</text>
+<rect x="710" y="370" width="150" height="56" rx="10" fill="#fff" stroke="#c2410c" stroke-width="2.5"/>
+<rect x="710" y="370" width="8" height="56" rx="4" fill="#c2410c"/>
+<text x="728" y="394" font-size="13" font-weight="600" fill="#0f172a">Route By Table (Li…</text>
+<text x="728" y="412" font-size="11" fill="#64748b">switch</text>
+<rect x="990" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="990" y="90" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1008" y="114" font-size="13" font-weight="600" fill="#0f172a">Search Invoices</text>
+<text x="1008" y="132" font-size="11" fill="#64748b">airtable</text>
+<rect x="1270" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#c2410c" stroke-width="2.5"/>
+<rect x="1270" y="270" width="8" height="56" rx="4" fill="#c2410c"/>
+<text x="1288" y="294" font-size="13" font-weight="600" fill="#0f172a">Aggregate Records</text>
+<text x="1288" y="312" font-size="11" fill="#64748b">aggregate</text>
+<rect x="990" y="210" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="990" y="210" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1008" y="234" font-size="13" font-weight="600" fill="#0f172a">Search Leads</text>
+<text x="1008" y="252" font-size="11" fill="#64748b">airtable</text>
+<rect x="990" y="330" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="990" y="330" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1008" y="354" font-size="13" font-weight="600" fill="#0f172a">Search Products</text>
+<text x="1008" y="372" font-size="11" fill="#64748b">airtable</text>
+<rect x="990" y="450" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="990" y="450" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1008" y="474" font-size="13" font-weight="600" fill="#0f172a">Search Tasks</text>
+<text x="1008" y="492" font-size="11" fill="#64748b">airtable</text>
+<rect x="930" y="790" width="150" height="56" rx="10" fill="#fff" stroke="#e8792b" stroke-width="2.5"/>
+<rect x="930" y="790" width="8" height="56" rx="4" fill="#e8792b"/>
+<text x="948" y="814" font-size="13" font-weight="600" fill="#0f172a">Respond Unknown Ta…</text>
+<text x="948" y="832" font-size="11" fill="#64748b">respondToWebhook</text>
+<rect x="710" y="670" width="150" height="56" rx="10" fill="#fff" stroke="#c2410c" stroke-width="2.5"/>
+<rect x="710" y="670" width="8" height="56" rx="4" fill="#c2410c"/>
+<text x="728" y="694" font-size="13" font-weight="600" fill="#0f172a">Route By Table (Wr…</text>
+<text x="728" y="712" font-size="11" fill="#64748b">switch</text>
+<rect x="990" y="610" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="990" y="610" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="1008" y="634" font-size="13" font-weight="600" fill="#0f172a">Flatten Invoice Pa…</text>
+<text x="1008" y="652" font-size="11" fill="#64748b">set</text>
+<rect x="1270" y="610" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="1270" y="610" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1288" y="634" font-size="13" font-weight="600" fill="#0f172a">Create Invoice Rec…</text>
+<text x="1288" y="652" font-size="11" fill="#64748b">airtable</text>
+<rect x="1550" y="790" width="150" height="56" rx="10" fill="#fff" stroke="#e8792b" stroke-width="2.5"/>
+<rect x="1550" y="790" width="8" height="56" rx="4" fill="#e8792b"/>
+<text x="1568" y="814" font-size="13" font-weight="600" fill="#0f172a">Respond Write Succ…</text>
+<text x="1568" y="832" font-size="11" fill="#64748b">respondToWebhook</text>
+<rect x="990" y="730" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="990" y="730" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="1008" y="754" font-size="13" font-weight="600" fill="#0f172a">Flatten Lead Payload</text>
+<text x="1008" y="772" font-size="11" fill="#64748b">set</text>
+<rect x="1270" y="730" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="1270" y="730" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1288" y="754" font-size="13" font-weight="600" fill="#0f172a">Create Lead Record</text>
+<text x="1288" y="772" font-size="11" fill="#64748b">airtable</text>
+<rect x="990" y="850" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="990" y="850" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="1008" y="874" font-size="13" font-weight="600" fill="#0f172a">Flatten Product Pa…</text>
+<text x="1008" y="892" font-size="11" fill="#64748b">set</text>
+<rect x="1270" y="850" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="1270" y="850" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1288" y="874" font-size="13" font-weight="600" fill="#0f172a">Create Product Rec…</text>
+<text x="1288" y="892" font-size="11" fill="#64748b">airtable</text>
+<rect x="990" y="970" width="150" height="56" rx="10" fill="#fff" stroke="#64748b" stroke-width="2.5"/>
+<rect x="990" y="970" width="8" height="56" rx="4" fill="#64748b"/>
+<text x="1008" y="994" font-size="13" font-weight="600" fill="#0f172a">Flatten Task Payload</text>
+<text x="1008" y="1012" font-size="11" fill="#64748b">set</text>
+<rect x="1270" y="970" width="150" height="56" rx="10" fill="#fff" stroke="#2d7ff9" stroke-width="2.5"/>
+<rect x="1270" y="970" width="8" height="56" rx="4" fill="#2d7ff9"/>
+<text x="1288" y="994" font-size="13" font-weight="600" fill="#0f172a">Create Task Record</text>
+<text x="1288" y="1012" font-size="11" fill="#64748b">airtable</text>
+<rect x="1550" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#e8792b" stroke-width="2.5"/>
+<rect x="1550" y="270" width="8" height="56" rx="4" fill="#e8792b"/>
+<text x="1568" y="294" font-size="13" font-weight="600" fill="#0f172a">Respond List Success</text>
+<text x="1568" y="312" font-size="11" fill="#64748b">respondToWebhook</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 710 516" width="710" height="516" font-family="Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="20" y="34" font-size="22" font-weight="700" fill="#0f172a">WF5 - Customer Service Agent</text>
+<path d="M200,118.0 C240,118.0 230,118.0 270,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="270" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M420,118.0 C465.0,118.0 465.0,118.0 510,118.0" fill="none" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="510" cy="118.0" r="4" fill="#94a3b8"/>
+<path d="M345.0,270 C345.0,220 345.0,196 345.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M465.0,270 C465.0,220 345.0,196 345.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M585.0,270 C585.0,220 345.0,196 345.0,146" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M585.0,410 C585.0,360 585.0,376 585.0,326" fill="none" stroke="#7c5cdb" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="50" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#1e9e6a" stroke-width="2.5"/>
+<rect x="50" y="90" width="8" height="56" rx="4" fill="#1e9e6a"/>
+<text x="68" y="114" font-size="13" font-weight="600" fill="#0f172a">Customer Message</text>
+<text x="68" y="132" font-size="11" fill="#64748b">telegramTrigger</text>
+<rect x="270" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="270" y="90" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="288" y="114" font-size="13" font-weight="600" fill="#0f172a">Customer Service A…</text>
+<text x="288" y="132" font-size="11" fill="#64748b">agent</text>
+<rect x="270" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="270" y="270" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="288" y="294" font-size="13" font-weight="600" fill="#0f172a">OpenAI Model</text>
+<text x="288" y="312" font-size="11" fill="#64748b">lmChatOpenAi</text>
+<rect x="390" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="390" y="270" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="408" y="294" font-size="13" font-weight="600" fill="#0f172a">Conversation Memory</text>
+<text x="408" y="312" font-size="11" fill="#64748b">memoryBufferWindow</text>
+<rect x="510" y="270" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="510" y="270" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="528" y="294" font-size="13" font-weight="600" fill="#0f172a">Search Knowledge B…</text>
+<text x="528" y="312" font-size="11" fill="#64748b">vectorStoreInMemory</text>
+<rect x="510" y="410" width="150" height="56" rx="10" fill="#fff" stroke="#7c5cdb" stroke-width="2.5"/>
+<rect x="510" y="410" width="8" height="56" rx="4" fill="#7c5cdb"/>
+<text x="528" y="434" font-size="13" font-weight="600" fill="#0f172a">Knowledge Embeddings</text>
+<text x="528" y="452" font-size="11" fill="#64748b">embeddingsOpenAi</text>
+<rect x="510" y="90" width="150" height="56" rx="10" fill="#fff" stroke="#e8792b" stroke-width="2.5"/>
+<rect x="510" y="90" width="8" height="56" rx="4" fill="#e8792b"/>
+<text x="528" y="114" font-size="13" font-weight="600" fill="#0f172a">Send Reply</text>
+<text x="528" y="132" font-size="11" fill="#64748b">telegram</text>
+</svg>
